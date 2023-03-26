@@ -2,40 +2,40 @@ my_data = read.csv("~/Desktop/BAN_602_Case_3.csv", header = TRUE)
 head(my_data)
 colnames(my_data) <- c('T2005','AZ100')
 
-summary(BAN_602_Case_3)
-mean(BAN_602_Case_3$T2005)
-sd(BAN_602_Case_3$T2005)
-var(BAN_602_Case_3$T2005)
-median(BAN_602_Case_3$T2005)
-quantile(BAN_602_Case_3$T2005)
-range(BAN_602_Case_3$T2005)
-max(BAN_602_Case_3$T2005)
-min(BAN_602_Case_3$T2005)
+summary(my_data)
+mean(my_data$T2005)
+sd(my_data$T2005)
+var(my_data$T2005)
+median(my_data$T2005)
+quantile(my_data$T2005)
+range(my_data$T2005)
+max(my_data$T2005)
+min(my_data$T2005)
 
-mean(BAN_602_Case_3$AZ100)
-sd(BAN_602_Case_3$AZ100)
-var(BAN_602_Case_3$AZ100)
-quantile(BAN_602_Case_3$AZ100)
+mean(my_data$AZ100)
+sd(my_data$AZ100)
+var(my_data$AZ100)
+quantile(my_data$AZ100)
 
 # Conducting a hypothesis test on a condition that both T2005 and AZ100 are equally accurate
 # Considering Ho <- T2005 and AZ100 are equally accurate (u1=u2)
 # Ha <- T2005 and AZ100 are not eqally accurate (u1!=u2)
-x <- unlist(BAN_602_Case_3$T2005)
+x <- unlist(my_data$T2005)
 print(x)
-y <- unlist(BAN_602_Case_3$AZ100)
+y <- unlist(my_data$AZ100)
 print(y)
 #Finding the no. of rows
-n <- nrow(BAN_602_Case_3)
+n <- nrow(my_data)
 n 
 
 # Significance Level
 alpha <- 0.05
 
-x1 <- mean(BAN_602_Case_3$T2005)
-x2 <- mean(BAN_602_Case_3$AZ100)
+x1 <- mean(my_data$T2005)
+x2 <- mean(my_data$AZ100)
 
-v1 <- var(BAN_602_Case_3$T2005)
-v2 <- var(BAN_602_Case_3$AZ100)
+v1 <- var(my_data$T2005)
+v2 <- var(my_data$AZ100)
 
 # Degree of freedom
 df <- ((v1/n)+(v2/n))^2/((1/(n-1))*(v1/n)^2+(1/(n-1)*(v2/n)^2))
